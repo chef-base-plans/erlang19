@@ -1,11 +1,11 @@
-title 'Tests to confirm erlang21 works as expected'
+title 'Tests to confirm erlang19 works as expected'
 
 plan_origin = ENV['HAB_ORIGIN']
-plan_name = input('plan_name', value: 'erlang21')
+plan_name = input('plan_name', value: 'erlang19')
 
-control 'core-plans-erlang21-works' do
+control 'core-plans-erlang19-works' do
   impact 1.0
-  title 'Ensure erlang21 works as expected'
+  title 'Ensure erlang19 works as expected'
   desc '
   Verify erlang19 by ensuring that
   (1) its installation directory exists 
