@@ -77,6 +77,7 @@ control 'core-plans-erlang19-works' do
     if(script)
       Tempfile.open('foo') do |f|
         f << script
+        sleep(1)
         command_under_test = command("#{command_statement} #{f.path}")
       end
     else
