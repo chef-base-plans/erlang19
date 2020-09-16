@@ -17,7 +17,7 @@ control 'core-plans-erlang19-works' do
   use "-help"; some return output to stdout, other to stderr; some return "Usage:..."
   others return "usage:..."  The outcome is that no one standard test pattern can be 
   used for all.  escript must reference an actual file; the normal linux <(..) re-direction
-  does not work.
+  does not work unfortunately.
   '
   
   plan_installation_directory = command("hab pkg path #{plan_origin}/#{plan_name}")
@@ -77,7 +77,7 @@ control 'core-plans-erlang19-works' do
     if(script)
       Tempfile.open('foo') do |f|
         f << script
-        sleep(1)
+        sleep(5) unless File.exists?(f.path)
         command_under_test = command("#{command_statement} #{f.path}")
       end
     else
